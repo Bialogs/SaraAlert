@@ -6,15 +6,27 @@ import MonitoringDistributionDay from './widgets/MonitoringDistributionDay';
 // import AssessmentsDay from './widgets/AssessmentsDay';
 import { PropTypes } from 'prop-types';
 import MapChart from './widgets/MapChart';
+import { totalMonitoreesMap } from '../data';
 import CumulativeMapChart from './widgets/CumulativeMapChart';
 import CasesOverTime from './widgets/CasesOverTime';
 import domtoimage from 'dom-to-image';
+import CdcMap from 'cdc-map';
+import 'cdc-map/build/static/css/index.css';
 
 class MonitorAnalytics extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.monitoreesMap = totalMonitoreesMap;
+    // For now get most recent day
+    var len = this.props.stats.total_patient_count_by_state_and_day.length;
+    var data = this.props.stats.total_patient_count_by_state_and_day[len - 1];
+    data = _.omit(data, 'day');
+    for (const [ind, state] of Object.entries(this.monitoreesMap.data)) {
+      state['Monitorees'] = data[state.state] ? data[state.state] : 0;
+    }
   }
+
   handleClick() {
     var node = document.getElementById('sara-alert-body');
     domtoimage
@@ -36,6 +48,7 @@ class MonitorAnalytics extends React.Component {
         console.error(error);
       });
   }
+
   render() {
     return (
       <React.Fragment>
@@ -76,7 +89,8 @@ class MonitorAnalytics extends React.Component {
               </Row>
               <Row className="mt-4">
                 <Col md="24">
-                  <MapChart stats={this.props.stats} />
+                  <CdcMap config={this.monitoreesMap} />
+                  {/* <MapChart stats={this.props.stats} /> */}
                 </Col>
               </Row>
               <Row className="mt-4">

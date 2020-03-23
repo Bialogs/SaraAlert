@@ -1,3 +1,271 @@
+export const totalMonitoreesMap = {
+  columns: {
+    geo: {
+      name: 'state',
+      label: 'Location',
+      tooltip: false,
+      dataTable: true,
+    },
+    primary: {
+      name: 'Monitorees',
+      label: 'Data Label',
+      prefix: '',
+      suffix: '',
+      dataTable: true,
+      tooltip: true,
+    },
+    navigate: {
+      name: 'link',
+      tooltip: false,
+      dataTable: false,
+    },
+  },
+  legend: {
+    numberOfItems: 3,
+    position: 'side',
+    title: 'Legend Title',
+    description: 'Legend Text',
+    type: 'equalnumber',
+    specialClasses: [],
+    data: [],
+  },
+  data: [
+    {
+      state: 'Alabama',
+      link: '',
+    },
+    {
+      state: 'Alaska',
+      link: '',
+    },
+    {
+      state: 'Arizona',
+      link: 'https://search.cdc.gov/search/?query=Arizona&utf8=%E2%9C%93&affiliate=cdc-main',
+    },
+    {
+      state: 'Arkansas',
+      link: '',
+    },
+    {
+      state: 'California',
+      link: 'https://search.cdc.gov/search/?query=California&utf8=%E2%9C%93&affiliate=cdc-main',
+    },
+    {
+      state: 'Colorado',
+      link: '',
+    },
+    {
+      state: 'Connecticut',
+      link: '',
+    },
+    {
+      state: 'Delaware',
+      link: '',
+    },
+    {
+      state: 'District of Columbia',
+      link: '',
+    },
+    {
+      state: 'Florida',
+      link: '',
+    },
+    {
+      state: 'Georgia',
+      link: '',
+    },
+    {
+      state: 'Hawaii',
+      link: '',
+    },
+    {
+      state: 'Idaho',
+      link: '',
+    },
+    {
+      state: 'Illinois',
+      link: '',
+    },
+    {
+      state: 'Indiana',
+      link: '',
+    },
+    {
+      state: 'Iowa',
+      link: '',
+    },
+    {
+      state: 'Kansas',
+      link: '',
+    },
+    {
+      state: 'Kentucky',
+      link: '',
+    },
+    {
+      state: 'Louisiana',
+      link: '',
+    },
+    {
+      state: 'Maine',
+      link: '',
+    },
+    {
+      state: 'Maryland',
+      link: '',
+    },
+    {
+      state: 'Massachusetts',
+      link: '',
+    },
+    {
+      state: 'Michigan',
+      link: '',
+    },
+    {
+      state: 'Minnesota',
+      link: '',
+    },
+    {
+      state: 'Mississippi',
+      link: '',
+    },
+    {
+      state: 'Missouri',
+      link: '',
+    },
+    {
+      state: 'Montana',
+      link: '',
+    },
+    {
+      state: 'Nebraska',
+      link: '',
+    },
+    {
+      state: 'Nevada',
+      link: '',
+    },
+    {
+      state: 'New Hampshire',
+      link: '',
+    },
+    {
+      state: 'New Jersey',
+      link: '',
+    },
+    {
+      state: 'New Mexico',
+      link: '',
+    },
+    {
+      state: 'New York',
+      link: '',
+    },
+    {
+      state: 'North Carolina',
+      link: '',
+    },
+    {
+      state: 'North Dakota',
+      link: '',
+    },
+    {
+      state: 'Ohio',
+      link: '',
+    },
+    {
+      state: 'Oklahoma',
+      link: '',
+    },
+    {
+      state: 'Oregon',
+      link: '',
+    },
+    {
+      state: 'Pennsylvania',
+      link: '',
+    },
+    {
+      state: 'Rhode Island',
+      link: '',
+    },
+    {
+      state: 'South Carolina',
+      link: '',
+    },
+    {
+      state: 'South Dakota',
+      link: '',
+    },
+    {
+      state: 'Tennessee',
+      link: '',
+    },
+    {
+      state: 'Texas',
+      link: 'https://search.cdc.gov/search/?query=Texas&utf8=%E2%9C%93&affiliate=cdc-main',
+    },
+    {
+      state: 'Utah',
+      link: '',
+    },
+    {
+      state: 'Vermont',
+      link: '',
+    },
+    {
+      state: 'Virginia',
+      link: '',
+    },
+    {
+      state: 'Washington',
+      link: '',
+    },
+    {
+      state: 'West Virginia',
+      link: '',
+    },
+    {
+      state: 'Wisconsin',
+      link: '',
+    },
+    {
+      state: 'Los Angeles',
+      link: '',
+    },
+    {
+      state: 'Dallas',
+      link: '',
+    },
+    {
+      state: 'Wyoming',
+      link: '',
+    },
+    {
+      state: 'Virgin Islands',
+      link: '',
+    },
+    {
+      state: 'Puerto Rico',
+      link: '',
+    },
+  ],
+  filters: [],
+  general: {
+    title: 'Total Monitorees',
+    subtext: '',
+    type: 'data',
+    geoType: 'us',
+    headerColor: 'theme-slate',
+    showSidebar: true,
+    showTitle: true,
+    showDownloadButton: true,
+    expandDataTable: true,
+  },
+  color: 'orangered',
+};
+
 export const stateOptions = [
   { name: 'Alabama', abbrv: 'AL' },
   { name: 'Alaska', abbrv: 'AK' },
