@@ -55,13 +55,31 @@
             # The expected threshold value for bool_values should always be true
             value: true
             type: 'BoolSymptom'
-        'Difficulty Breathing':
+        'Shortness of Breath or Difficulty Breathing':
             value: true
             type: 'BoolSymptom'
         'Fever':
             value: true
             type: 'BoolSymptom'
             notes: 'Feeling feverish or have a measured temperature at or above 100.4°F/38°C'
+        'Chills':
+            value: true
+            type: 'BoolSymptom'
+        'Repeated Shaking with Chills':
+            value: true
+            type: 'BoolSymptom'
+        'Muscle Pain':
+            value: true
+            type: 'BoolSymptom'
+        'Headache':
+            value: true
+            type: 'BoolSymptom'
+        'Sore Throat':
+            value: true
+            type: 'BoolSymptom'
+        'New Loss of Taste or Smell':
+            value: true
+            type: 'BoolSymptom'           
     # Jurisdictions follow a hierarchy, the hierarchy is defined by nesting jurisdictions
     # in the children: field
     children:
