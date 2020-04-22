@@ -18,7 +18,28 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="/export/all/csv">Line list CSV</a>
         <a class="dropdown-item" href="/export/all/csv_comprehensive">Sara Alert Format CSV</a>
-        <a class="dropdown-item" href="/export/all/full_history_all_monitorees">Full History Of All Monitorees</a>
+        <a class="dropdown-item" data-toggle="modal" data-target="#fullHistoryModal">Full History Of All Monitorees</a>
+      </div>
+    </div>
+    <div class="modal fade" id="fullHistoryModal" tabindex="-1" role="dialog" aria-labelledby="fullHistoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="fullHistoryModalLabel">Request Excel Export Of All Monitoree Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div> After clicking 'Submit Request', we will export all monitoree data, assessments, and edit histories into an Excel file that we will send to the email address associated with your account.
+            This process may take up to 15 minutes to complete. </div>
+            <br/>
+            <div class="text-right"> <%= button_to "Submit Request", "/export/full_history_all_monitorees", {class: "btn-primary btn-lg", "data-dismiss": "modal"} %></div>
+            <%# <form method="post" action="/export/full_history_all_monitorees" class="button_to">
+              <div class="text-right"> <button class="btn-primary btn-lg">Submit Request</button> </div>
+            </form> %>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
@@ -96,4 +117,10 @@
     });
     window.WORKFLOW = 'exposure';
   });
+  $body = $("body");
+  $(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+    ajaxStop: function() { $body.removeClass("loading"); }    
+  });
 </script>
+<div class="spinning-modal"></div>

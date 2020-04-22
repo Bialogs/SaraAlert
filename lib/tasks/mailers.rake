@@ -23,6 +23,12 @@ namespace :mailers do
     PatientMailer.enrollment_email(test_patient).deliver_now
   end
 
+  desc 'Test sending an excel export email'
+  task test_send_excel_export_email: :environment do
+    # Replace email with your email, this will export patients with ids 1 and 2
+    PatientMailer.export_email('<youremail>',[1,2]).deliver_now
+  end
+
   desc "Test making an assessment call"
   task test_asessment_call: :environment do
       account_sid = ENV['TWILLIO_API_ACCOUNT']

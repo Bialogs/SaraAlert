@@ -146,4 +146,9 @@ class PatientMailer < ApplicationMailer
     @patient = patient
     mail(to: patient.email, subject: 'Sara Alert Reporting Complete')
   end
+
+  def export_email(email, patient_ids)
+    attachments["Sara-Alert-Full-History-All-Monitorees-#{DateTime.now}.xlsx"] = ExportController.get_excel_for_patients(patient_ids)
+    mail(to: email, subject: 'Sara Alert Excel Export')
+  end
 end
